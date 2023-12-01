@@ -8,7 +8,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 interface ProductService {
     @GET("products")
-    suspend fun getProducts(): ProductsResponse
+    suspend fun getProducts(): Response<ProductsResponse>
 
     @GET("products/{id}")
     suspend fun getSingleProduct(@Path("id") id: Int): Response<Product>

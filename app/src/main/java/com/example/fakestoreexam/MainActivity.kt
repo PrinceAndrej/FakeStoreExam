@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.fakestoreexam.data.Product
+import com.example.fakestoreexam.data.ProductRepository
 import com.example.fakestoreexam.screens.DetailScreen.ProductDetailsScreen
 import com.example.fakestoreexam.screens.DetailScreen.ProductDetailsViewModel
 import com.example.fakestoreexam.screens.ProductListScreen.ProductListScreen
@@ -31,6 +32,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ProductRepository.initDatabase(applicationContext)
         setContent {
             FakeStoreExamTheme {
                 val navController = rememberNavController()
